@@ -6,7 +6,6 @@ from Logger import *
 
 if __name__ == '__main__':
 	logger = Logger()
-	logger.do_something()
 	# sys.argv is a list in Python, which contains the command-line arguments passed to the script. 
 	if len(sys.argv) != 2:
 		print("usage: sudo python %s <path to config file>" % sys.argv[0])
@@ -22,6 +21,14 @@ if __name__ == '__main__':
 		# Parse the config file
 		config = configparser.ConfigParser()
 		config.read(config_file)
+		print logging.DEBUG
+		logger.logger.debug('Initializing')
+		logger.logger.info('Initializing Neighbor Watch Daemon.')
+		logger.setLevel('debug')
+		logger.logger.debug('This time i could see')
+		logger.log('debug','This is a debug log')
+		logger.log('Fuck','This should be in critical log')
+		
 		pub_address = config['SETTINGS']['pub_address']
 		min_threshold = config['SETTINGS']['min_threshold']
 		max_threshold = config['SETTINGS']['max_threshold']
