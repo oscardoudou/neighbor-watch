@@ -1,9 +1,12 @@
 import sys
 import os
 import configparser
+from Logger import *
 
 
 if __name__ == '__main__':
+	logger = Logger()
+	logger.do_something()
 	# sys.argv is a list in Python, which contains the command-line arguments passed to the script. 
 	if len(sys.argv) != 2:
 		print("usage: sudo python %s <path to config file>" % sys.argv[0])
