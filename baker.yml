@@ -1,0 +1,9 @@
+name: vm1
+vm:
+  ip: 192.168.33.100
+  memory: "1024"
+lang:
+  - python
+packages:
+  - apt:
+    - git
